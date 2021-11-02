@@ -1,0 +1,31 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "server for image (comperssion, res-sizing, adding a watermark ) ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ahmedmagdy11/image_manpulation_server.git"
+  },
+  "keywords": [
+    "ffmpeg",
+    "image",
+    "manpulation"
+  ],
+  "author": "Ahmedmagdy11",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmedmagdy11/image_manpulation_server/issues"
+  },
+  "homepage": "https://github.com/ahmedmagdy11/image_manpulation_server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
