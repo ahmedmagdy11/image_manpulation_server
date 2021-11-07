@@ -26,7 +26,8 @@ async function pipeline(images = [], options = {}) {
 
 async function compress(image) {
     const newImage = getNewImagePath(image);
-    await asyncExec(`ffmpeg -i ${image} -q:v 25 ${newImage} -y`);
+
+    await asyncExec(`ffmpeg -i ${image} -q:v ${process.env.COMPRESSION_PARMETER} ${newImage} -y`);
     deleteTheOldImageAndRename(image, newImage);
     return;
 }
