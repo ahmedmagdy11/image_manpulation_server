@@ -33,14 +33,14 @@ async function compress(image) {
 
 async function addWaterMark(image) {
     const newImage = getNewImagePath(image);
-    const watermark = "/home/ahmed/image_manpulation_server/watermark.png";
+    const watermark = __dirname.replace("function", "watermark.png");
     await asyncExec(` ffmpeg -i ${image} -i ${watermark} -filter_complex "overlay=320:250" ${newImage} -y`);
     deleteTheOldImageAndRename(image, newImage);
     return;
 }
 async function resize(image) {
     const newImage = getNewImagePath(image);
-    await asyncExec(` ffmpeg -i ${image} -vf scale=w=700:h=500 ${newImage} -y`);
+    await asyncExec(` ffmpeg -i ${image} -vf scale=w=650:h=330 ${newImage} -y`);
     deleteTheOldImageAndRename(image, newImage);
     return;
 }
