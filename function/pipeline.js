@@ -35,7 +35,7 @@ async function compress(image) {
 async function addWaterMark(image) {
     const newImage = getNewImagePath(image);
     const watermark = __dirname.replace("function", "watermark.png");
-    await asyncExec(` ffmpeg -i ${image} -i ${watermark} -filter_complex "overlay=320:250" ${newImage} -y`);
+    await asyncExec(` ffmpeg -i ${image} -i ${watermark} -filter_complex "overlay=x=(main_w-overlay_w)/4:y=(main_h-overlay_h)/4" ${newImage} -y`);
     deleteTheOldImageAndRename(image, newImage);
     return;
 }
